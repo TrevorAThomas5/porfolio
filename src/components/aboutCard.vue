@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "card",
+  name: "aboutCard",
   props: {
     image: String,
     isBlurred: Boolean,
@@ -34,6 +34,7 @@ export default {
       mouseY: 0,
       mouseLeaveDelay: null,
       scale: 1,
+      expanded: false,
     };
   },
   computed: {
@@ -65,14 +66,52 @@ export default {
       const tX = this.mousePX * -40;
       const tY = this.mousePY * -25;
 
-      return {
-        transform: `translateX(${tX}px) translateY(${tY}px)`,
-      };
+      if (this.expanded === false) {
+        return {
+          transform: `translateX(${tX}px) translateY(${tY}px)`,
+        };
+      } else {
+        return {
+          width: "240px",
+        };
+      }
     },
     cardBgImage() {
-      return {
-        backgroundImage: `url(${this.image})`,
-      };
+      if (this.expanded === false) {
+        return {
+          backgroundImage: `url(${this.image})`,
+        };
+      } else {
+        return {
+          backgroundImage: `url("/headshot.png")`,
+          opacity: "1",
+        };
+      }
+    },
+    cardExpand() {
+      if (this.expanded === true) {
+        return {
+          boxShadow: "rgba(0, 0, 0, 0.66) 0 30px 60px 0",
+          width: "600px",
+          transform: "none",
+          backgroundColor: "#fff1e6",
+        };
+      } else {
+        return {};
+      }
+    },
+    cardInfo() {
+      if (this.expanded === true) {
+        return {
+          position: "absolute",
+          top: "0px",
+          right: "0px",
+          transform: "none",
+          width: "300px",
+        };
+      } else {
+        return {};
+      }
     },
   },
   methods: {
@@ -95,12 +134,19 @@ export default {
       }, 10);
     },
     handlePress() {
+      if (this.expanded === false) {
+        this.expanded = true;
+      } else {
+        this.expanded = false;
+      }
+
       this.clickFunction();
     },
   },
 };
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .card {
   position: relative;
@@ -135,6 +181,13 @@ export default {
   opacity: 1;
 }
 
+/*
+.card-wrap:hover .card-info::after {
+  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+*/
 .card-wrap:hover .card-bg {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     opacity 1s cubic-bezier(0.23, 1, 0.32, 1);
@@ -175,39 +228,19 @@ export default {
   transform: translateY(40%);
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .card-info p,
 .card-info div {
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .card-info * {
   position: relative;
   z-index: 1;
 }
-.card-info::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
-  background-blend-mode: overlay;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.card-wrap:hover .card-info::after {
-  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
-  opacity: 1;
-  transform: translateY(0);
-}
+
 .card-info h1 {
   font-family: "Playfair Display";
   font-size: 36px;

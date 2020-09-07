@@ -18,18 +18,18 @@
 
 <script>
 export default {
-  name: "card",
+  name: "B9card",
   props: {
     image: String,
     isBlurred: Boolean,
     touchFunction: { type: Function },
-    offAny: { type: Function },
+    off: { type: Function },
     clickFunction: { type: Function },
   },
   data: () => {
     return {
       width: 240,
-      height: 320,
+      height: 160,
       mouseX: 0,
       mouseY: 0,
       mouseLeaveDelay: null,
@@ -71,7 +71,7 @@ export default {
     },
     cardBgImage() {
       return {
-        backgroundImage: `url(${this.image})`,
+        backgroundImage: `url('/bot.png')`,
       };
     },
   },
@@ -82,13 +82,12 @@ export default {
     },
     handleMouseEnter() {
       clearTimeout(this.mouseLeaveDelay);
-      this.touchFunction();
-
+      this.touchFunction("B9");
       this.scale = 1.1;
     },
     handleMouseLeave() {
       this.scale = 1;
-      this.offAny();
+      this.off();
       this.mouseLeaveDelay = setTimeout(() => {
         this.mouseX = 0;
         this.mouseY = 0;
@@ -106,7 +105,7 @@ export default {
   position: relative;
   flex: 0 0 240px;
   width: 240px;
-  height: 320px;
+  height: 160px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -185,6 +184,15 @@ export default {
   position: relative;
   z-index: 1;
 }
+
+.card-info h1 {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+  margin: 0;
+}
+
 .card-info::after {
   content: "";
   position: absolute;
@@ -207,12 +215,5 @@ export default {
   transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 1;
   transform: translateY(0);
-}
-.card-info h1 {
-  font-family: "Playfair Display";
-  font-size: 36px;
-  font-weight: 700;
-  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
-  margin: 0;
 }
 </style>

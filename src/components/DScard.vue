@@ -6,9 +6,9 @@
     @mouseleave="handleMouseLeave"
     ref="card"
   >
-    <div class="card" :style="cardStyle">
+    <div class="card" :style="[cardStyle, blurred, cardExpand]" v-on:click="this.handlePress">
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
-      <div class="card-info">
+      <div class="card-info" :style="cardInfo">
         <slot name="header"></slot>
         <slot name="content"></slot>
       </div>
@@ -18,20 +18,34 @@
 
 <script>
 export default {
-  name: "titleCard",
+  name: "DScard",
   props: {
-    image: String,
+    isBlurred: Boolean,
+    touchFunction: { type: Function },
+    off: { type: Function },
+    clickFunction: { type: Function },
   },
   data: () => {
     return {
-      width: 500,
-      height: 500,
+      width: 480,
+      height: 320,
       mouseX: 0,
       mouseY: 0,
       mouseLeaveDelay: null,
+      scale: 1,
     };
   },
   computed: {
+    blurred() {
+      var blurAmount = 0;
+      if (this.isBlurred === true) {
+        blurAmount = 10;
+      }
+
+      return {
+        filter: `blur(${blurAmount}px)`,
+      };
+    },
     mousePX() {
       return this.mouseX / this.width;
     },
@@ -39,18 +53,16 @@ export default {
       return this.mouseY / this.height;
     },
     cardStyle() {
-      const rX = this.mousePX * 10;
-      const rY = this.mousePY * -10;
-
-      console.log(this.mousePX + " " + this.mousePY);
+      const rX = this.mousePX * 30;
+      const rY = this.mousePY * -15;
 
       return {
-        transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
+        transform: `rotateY(${rX}deg) rotateX(${rY}deg) scale(${this.scale})`,
       };
     },
     cardBgTransform() {
-      const tX = this.mousePX * -20;
-      const tY = this.mousePY * -20;
+      const tX = this.mousePX * -40;
+      const tY = this.mousePY * -25;
 
       return {
         transform: `translateX(${tX}px) translateY(${tY}px)`,
@@ -58,7 +70,7 @@ export default {
     },
     cardBgImage() {
       return {
-        backgroundImage: `url(${this.image})`,
+        backgroundImage: `url('/mash.png')`,
       };
     },
   },
@@ -69,24 +81,30 @@ export default {
     },
     handleMouseEnter() {
       clearTimeout(this.mouseLeaveDelay);
+      this.touchFunction("DS");
+      this.scale = 1.1;
     },
     handleMouseLeave() {
+      this.scale = 1;
+      this.off();
       this.mouseLeaveDelay = setTimeout(() => {
         this.mouseX = 0;
         this.mouseY = 0;
       }, 10);
     },
+    handlePress() {
+      this.clickFunction();
+    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .card {
   position: relative;
-  flex: 0 0 700px;
-  width: 700px;
-  height: 500px;
+  flex: 0 0 480px;
+  width: 480px;
+  height: 320px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -100,7 +118,6 @@ export default {
   transform: perspective(800px);
   transform-style: preserve-3d;
   cursor: pointer;
-  margin-bottom: 200px;
 }
 .card-wrap:hover .card-info {
   transform: translateY(0);
@@ -112,14 +129,13 @@ export default {
 .card-info p {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.card-wrap:hover .card-info::after {
-  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+.card-wrap:hover .card-info div {
   opacity: 1;
-  transform: translateY(0);
 }
+
 .card-wrap:hover .card-bg {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity 1s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0.8;
 }
 .card-wrap:hover .card {
@@ -147,24 +163,35 @@ export default {
 }
 
 .card-info {
-  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
   position: absolute;
-  width: 100%;
   bottom: 0;
   color: #fff;
   transform: translateY(40%);
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.card-info p {
+.card-info p,
+.card-info div {
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-  width: 80%;
 }
 .card-info * {
   position: relative;
   z-index: 1;
 }
+
+.card-info h1 {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+  margin: 0;
+}
+
 .card-info::after {
   content: "";
   position: absolute;
@@ -183,12 +210,9 @@ export default {
   transform: translateY(100%);
   transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-
-.card-info h1 {
-  font-family: "Playfair Display";
-  font-size: 36px;
-  font-weight: 700;
-  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
-  margin: 0;
+.card-wrap:hover .card-info::after {
+  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
