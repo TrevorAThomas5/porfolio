@@ -213,7 +213,7 @@ export default {
   top: 35px;
   left: 25px;
   width: 50px;
-
+  z-index: 10;
   cursor: pointer;
 }
 

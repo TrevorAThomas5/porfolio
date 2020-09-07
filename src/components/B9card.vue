@@ -6,9 +6,12 @@
     @mouseleave="handleMouseLeave"
     ref="card"
   >
-    <div class="card" :style="[cardStyle, blurred, cardExpand]" v-on:click="this.handlePress">
+    <div class="card" :style="[cardStyle, blurred]" v-on:click="this.handlePress">
+      <div class="unityWrapper">
+        <img class="unity" src="/node-brands.svg" />
+      </div>
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
-      <div class="card-info" :style="cardInfo">
+      <div class="card-info">
         <slot name="header"></slot>
         <slot name="content"></slot>
       </div>
@@ -215,5 +218,27 @@ export default {
   transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 1;
   transform: translateY(0);
+}
+
+.unityWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff;
+
+  z-index: 5;
+}
+
+.unity {
+  margin-left: 5px;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
 }
 </style>

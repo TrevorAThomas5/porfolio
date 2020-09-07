@@ -6,9 +6,13 @@
     @mouseleave="handleMouseLeave"
     ref="card"
   >
-    <div class="card" :style="[cardStyle, blurred, cardExpand]" v-on:click="this.handlePress">
+    <div class="card" :style="[cardStyle, blurred]" v-on:click="this.handlePress">
+      <div class="androidWrapper">
+        <img class="android" src="/java-brands.svg" />
+        <img class="android" src="/android-brands.svg" />
+      </div>
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
-      <div class="card-info" :style="cardInfo">
+      <div class="card-info">
         <slot name="header"></slot>
         <slot name="content"></slot>
       </div>
@@ -120,16 +124,20 @@ export default {
   transform-style: preserve-3d;
   cursor: pointer;
 }
+
 .card-wrap:hover .card-info {
   transform: translateY(0);
 }
+
 .card-wrap:hover .card-info p {
   opacity: 1;
 }
+
 .card-wrap:hover .card-info,
 .card-info p {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 .card-wrap:hover .card-info div {
   opacity: 1;
 }
@@ -139,6 +147,7 @@ export default {
     opacity 1s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0.8;
 }
+
 .card-wrap:hover .card {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -174,6 +183,7 @@ export default {
   transform: translateY(40%);
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .card-info p,
 .card-info div {
   opacity: 0;
@@ -211,9 +221,30 @@ export default {
   transform: translateY(100%);
   transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
+
 .card-wrap:hover .card-info::after {
   transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 1;
   transform: translateY(0);
+}
+
+.androidWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+
+  z-index: 5;
+}
+
+.android {
+  margin-left: 5px;
+  height: 30px;
+  width: 30px;
+  text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
 }
 </style>

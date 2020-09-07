@@ -2,7 +2,6 @@
   <div>
     <div class="cardContainer">
       <aboutCard
-        :style="card1Style"
         v-bind:clickFunction="this.expandAbout"
         v-bind:offAny="offAny"
         v-bind:touchFunction="on1"
