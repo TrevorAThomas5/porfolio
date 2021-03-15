@@ -95,6 +95,8 @@ export default {
           width: "600px",
           transform: "none",
           backgroundColor: "#fff1e6",
+          borderTop: "6px solid #000000",
+          borderRadius: "0",
         };
       } else {
         return {};

@@ -133,7 +133,7 @@ export default {
         this.notExpanded = true;
       } else {
         this.description =
-          "<h3>Trevor Thomas</h3><p>Software Developer/Web designer<div><img src='/loc.svg' /><b> San Diego, California</b><p style='text-align:left; margin-top: 20px; font-size: 18px;'> I love working on creative, practical, and elegant solutions to computational problems. I'm currently majoring in Computer Science at UCSD.</p><div>";
+          "<h3><b>Trevor Thomas</b></h3><p>Software Developer/Web designer<div><img src='/loc.svg' /><b> San Diego, California</b><p style='text-align:left; margin-top: 20px; font-size: 18px; color: hsl(0, 0%, 29%); font-weight: 100;'> I love working on creative, practical, and elegant solutions to computational problems. I'm currently majoring in Computer Science at UCSD.</p><div>";
         this.notExpanded = false;
       }
     },

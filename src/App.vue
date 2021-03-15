@@ -13,7 +13,7 @@ export default {
 <style>
 @font-face {
   font-family: "Fonti";
-  src: url(/VVF.ttf) format("truetype");
+  src: url("/VVF.ttf") format("truetype");
 }
 
 body {
@@ -25,9 +25,10 @@ body {
 }
 
 h3 {
-  margin-top: 26px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 1000;
 }
 
 p {

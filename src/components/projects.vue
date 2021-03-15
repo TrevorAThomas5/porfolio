@@ -6,7 +6,8 @@
 
     <div class="projectsContainer">
       <div class="FFT">
-        <FFTcard v-bind:isBlurred="this.FFTblur" v-bind:touchFunction="hover" v-bind:off="off">
+        <FFTcard v-bind:isBlurred="this.FFTblur" v-bind:touchFunction="hover" v-bind:off="off"
+          v-bind:clickFunction="openProjects">
           <h1 slot="header">Food For Thought</h1>
           <div
             slot="content"
@@ -159,6 +160,10 @@ export default {
       this.GHblur = false;
       this.B9blur = false;
     },
+
+    openProjects() {
+      window.location.href = "/#/FFT";
+    },
   },
 };
 </script>
@@ -221,7 +226,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 .triContainer {
