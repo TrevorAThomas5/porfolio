@@ -48,25 +48,34 @@
           </GHcard>
         </div>
         <div class="B9">
-          <B9card v-bind:isBlurred="this.B9blur" v-bind:touchFunction="hover" v-bind:off="off">
-            <h1 slot="header">Bevan 9000</h1>
-            <div slot="content">Monitor your friends on Discord.</div>
+          <B9card v-bind:isBlurred="this.B9blur" v-bind:touchFunction="hover" v-bind:off="off"
+            v-bind:clickFunction="openTodo">
+            <h1 slot="header">Todo App</h1>
+            <div slot="content">Keep track of your daily tasks and monitor your progress.</div>
           </B9card>
         </div>
       </div>
     </div>
 
     <div class="contactContainer">
-      <p class="contact">contact me ——</p>
-      <img
-        class="icon2"
-        onclick="window.location.href='https://github.com/TrevorAThomas5'"
-        src="/github-brands.svg"
-      />
-      <div class="mailWrapper">
-        <img class="icon1" src="/envelope-regular.svg" />
-      </div>
-    </div>
+            <p class="contactE">tathomas@ucsd.edu</p>
+            <p class="contactE">TrevorAThomas5@gmail.com</p>
+            <div class="contactInfo">
+                <p class="contact">contact me ——</p>
+                <img
+                class="icon2"
+                onclick="window.location.href='https://github.com/TrevorAThomas5'"
+                src="/github-brands.svg"
+                />
+                <div class="mailWrapper">
+                    <img
+                    class="icon1"
+                    onclick="window.location.href='https://www.linkedin.com/in/trevor-thomas-67988b1b6/'"
+                    src="/envelope-regular.svg"
+                    />
+                </div>
+            </div>
+            </div>
   </div>
 </template>
 
@@ -164,15 +173,21 @@ export default {
     openProjects() {
       window.location.href = "/#/FFT";
     },
+
+    openTodo() {
+      window.location.href = 'http://tina.hanaroenterprise.com/todo';
+    },
   },
 };
 </script>
 
 <style scoped>
 .contactContainer {
+  text-align: left;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
   position: fixed;
   bottom: 50px;
   left: 50vw;
@@ -180,9 +195,18 @@ export default {
   z-index: -10;
 }
 
-.contact {
+.contact { 
+ text-align: left;
+ font-weight: 100;
   font-family: "Playfair Display";
   font-size: 20px;
+}
+
+.contactE { 
+ text-align: left;
+ font-weight: 100;
+  font-family: "Playfair Display";
+  font-size: 15px;
 }
 
 .icon1,
@@ -204,13 +228,9 @@ export default {
   width: 20px;
 }
 
-.mailWrapper::after {
-  content: "tathomas@ucsd.edu TrevorAThomas5@gmail.com";
-  display: block;
-  position: relative;
-  top: -65px;
-  right: 158px;
-  transition: 0.1s;
+.contactInfo {
+    display: flex;
+    flex-direction: row;
 }
 
 .backContainer {

@@ -6,7 +6,7 @@
         
         <div class="screen">
             <div class="selector">
-                <h1 @mouseenter="slide1" :style="[h1style]">Goal<hr :style="[h1stylel]"> </h1>
+                <h1 @mouseenter="slide1" :style="[h1style]">Home<hr :style="[h1stylel]"> </h1>
                 <h1 @mouseenter="slide2" :style="[h2style]">Design<hr :style="[h2stylel]"> </h1>
                 <h1 @mouseenter="slide3" :style="[h3style]">Database<hr :style="[h3stylel]"> </h1>
                 <h1 @mouseenter="slide4" :style="[h4style]">Teamwork<hr :style="[h4stylel]"> </h1>
@@ -23,18 +23,23 @@
         </div>
 
         <div class="contactContainer">
-            <p class="contact">contact me ——</p>
-            <img
+            <p class="contactE">https://github.com/jo32pilot/Food-for-Thought</p>
+            <p class="contactE">tathomas@ucsd.edu</p>
+            <p class="contactE">TrevorAThomas5@gmail.com</p>
+            <div class="contactInfo">
+                <p class="contact">contact me ——</p>
+                <img
                 class="icon2"
                 onclick="window.location.href='https://github.com/TrevorAThomas5'"
                 src="/github-brands.svg"
-            />
-            <div class="mailWrapper">
-                <img
+                />
+                <div class="mailWrapper">
+                    <img
                     class="icon1"
                     onclick="window.location.href='https://www.linkedin.com/in/trevor-thomas-67988b1b6/'"
                     src="/envelope-regular.svg"
-                />
+                    />
+                </div>
             </div>
         </div>
     </div>
@@ -231,9 +236,11 @@ export default {
 }
 
 .contactContainer {
+  text-align: left;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
   position: fixed;
   bottom: 50px;
   left: 50vw;
@@ -241,9 +248,18 @@ export default {
   z-index: -10;
 }
 
-.contact {
+.contact { 
+ text-align: left;
+ font-weight: 100;
   font-family: "Playfair Display";
   font-size: 20px;
+}
+
+.contactE { 
+ text-align: left;
+ font-weight: 100;
+  font-family: "Playfair Display";
+  font-size: 15px;
 }
 
 .icon1,
@@ -265,13 +281,9 @@ export default {
   width: 20px;
 }
 
-.mailWrapper::after {
-  content: "tathomas@ucsd.edu TrevorAThomas5@gmail.com";
-  display: block;
-  position: relative;
-  top: -65px;
-  right: 158px;
-  transition: 0.1s;
+.contactInfo {
+    display: flex;
+    flex-direction: row;
 }
 
 .screen {
@@ -292,7 +304,7 @@ export default {
     margin: 0px;
     margin-bottom: 10px;
     transform-origin: left;
-    transition: 0.5s;
+    transition: 0.3s;
     font-weight: 50;
 }
 
@@ -302,7 +314,7 @@ hr {
     right: -6px;
     transform: scaleX(0);
     transform-origin: left;
-    transition: 0.5s;
+    transition: 0.3s;
     margin: 0px;
     color: black;
     border: 1px dotted black;

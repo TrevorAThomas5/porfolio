@@ -5,9 +5,13 @@
     :style="[cardStyle]"
   >
     <div class="card" >
-        <div class="card-bg"></div>
-        <h1>Prototype</h1>
+        
+      <div class="card-bg">
     </div>
+
+   
+
+      </div>
   </div>
 </template>
 
@@ -72,10 +76,11 @@ export default {
 .card {
   text-align: center;
 
+
   position: relative;
   flex: 0 0 240px;
-  width: 500px;
-  height: 650px;
+  width: 350px;
+  height: 625px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -88,7 +93,7 @@ export default {
   transform: perspective(800px);
   transform-style: preserve-3d;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
   position: absolute;
 
   top:  -270px;
@@ -97,7 +102,6 @@ export default {
 
 
 .card-bg {
-  opacity: 0.5;
   position: absolute;
   top: -20px;
   left: -20px;
@@ -108,9 +112,12 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   pointer-events: none;
+  background-image: url('/home_screen.png');
+
+  background-size: contain;
 }
+
+
 
 </style>

@@ -8,7 +8,8 @@
   >
     <div class="card" :style="[cardStyle, blurred]" v-on:click="this.handlePress">
       <div class="unityWrapper">
-        <img class="unity" src="/node-brands.svg" />
+        <img class="unity" src="/js-brands.svg" />
+        <img class="unity" src="/react-brands.svg" />
       </div>
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
       <div class="card-info">
@@ -74,7 +75,7 @@ export default {
     },
     cardBgImage() {
       return {
-        backgroundImage: `url('/bot.png')`,
+        backgroundImage: `url('/todoPic.png')`,
       };
     },
   },
@@ -230,7 +231,7 @@ export default {
   top: 10px;
   right: 15px;
   color: #fff;
-
+  margin-right: 18px;
   z-index: 5;
 }
 
