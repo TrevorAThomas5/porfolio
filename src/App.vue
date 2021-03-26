@@ -15,7 +15,9 @@ export default {
   font-family: "Fonti";
   src: url("/VVF.ttf") format("truetype");
 }
-
+html, body {
+    overscroll-behavior: none;
+}
 body {
   font-family: "Fonti";
   font-size: 14px;

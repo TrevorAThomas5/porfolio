@@ -40,11 +40,12 @@
       </div>
       <div class="bigDoubleContainer">
         <div class="GH">
-          <GHcard v-bind:isBlurred="this.GHblur" v-bind:touchFunction="hover" v-bind:off="off">
-            <h1 slot="header">Ghost Hunter</h1>
+          <GHcard v-bind:isBlurred="this.GHblur" v-bind:touchFunction="hover" v-bind:off="off"
+            v-bind:clickFunction="openGH">
+            <h1 slot="header">Ghost Engine</h1>
             <div
               slot="content"
-            >Shoot ghosts in this faced-paced FPS that uses my own custom software renderer.</div>
+            >First person, 3D rendering engine based off the Doom engine.</div>
           </GHcard>
         </div>
         <div class="B9">
@@ -172,6 +173,10 @@ export default {
 
     openProjects() {
       window.location.href = "/#/FFT";
+    },
+
+    openGH() {
+        window.location.href = "/#/GH";
     },
 
     openTodo() {
