@@ -175,7 +175,7 @@ export default {
     },
 
     openTodo() {
-      window.location.href = 'http://tina.hanaroenterprise.com/todo';
+      window.location.href = 'http://trevor.hanaroenterprise.com/todo';
     },
   },
 };
