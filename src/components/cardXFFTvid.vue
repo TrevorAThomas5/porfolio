@@ -7,14 +7,8 @@
         ref="card"
     >
         <div class="card" :style="[size]" v-on:click="this.handlePress">
-            <div class="card-bg" :style="[cardBgImage]"></div>
-            <div class="anim"></div>
-            <div class="cardInfo">
-                <slot name="header"></slot>
-                <slot name="content"></slot>
-            </div>
-
-        </div>
+            <slot name="video"></slot>
+                    </div>
     </div>
 </template>
 

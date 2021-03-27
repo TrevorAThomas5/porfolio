@@ -32,11 +32,12 @@
                     </p>
                 </cardX>
             </div>
-            <cardX
-                class="fade-in"
-                v-bind:width="500"
-                v-bind:height="800"
-            ></cardX>
+            <cardXvid class="fade-in" v-bind:width="448" v-bind:height="800">
+                <video slot="video" width="475" height="800" autoplay loop>
+                    <source src="/demo1.mp4" type="video/mp4" />
+                    Your browser does not support video format.
+                </video>
+            </cardXvid>
             <div class="centerIt">
                 <cardX class="fade-in" v-bind:width="300" v-bind:height="275">
                     <h1 slot="header">My Role</h1>
@@ -60,7 +61,7 @@
             </div>
 
             <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="400">
+                <cardX class="fade-in" v-bind:width="400" v-bind:height="300">
                     <h1 slot="header">Shopping</h1>
                     <p slot="content">
                         ---<br />Users can place all the ingredients they want
@@ -70,7 +71,7 @@
                         transfer the ingredients to their inventory list.
                     </p>
                 </cardX>
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="300">
+                <cardX class="fade-in" v-bind:width="400" v-bind:height="225">
                     <p slot="content">
                         Alternatively, users can add ingredients that they
                         already own to their inventory page. Once they have
@@ -80,17 +81,12 @@
                     </p>
                 </cardX>
             </div>
-            <cardX
-                class="fade-in"
-                v-bind:width="500"
-                v-bind:height="800"
-            ></cardX>
-
-            <cardX
-                class="fade-in"
-                v-bind:width="500"
-                v-bind:height="800"
-            ></cardX>
+            <cardXvid class="fade-in" v-bind:width="448" v-bind:height="800">
+                <video slot="video" width="475" height="800" autoplay loop>
+                    <source src="/demo2.mp4" type="video/mp4" />
+                    Your browser does not support video format.
+                </video>
+            </cardXvid>
             <cardX class="fade-in" v-bind:width="300" v-bind:height="500">
                 <h1 slot="header">Feed</h1>
                 <p slot="content">
@@ -102,6 +98,24 @@
                     recipe in their feed, they can view which ingredients they
                     have in their ingredient. In the top right corner, the user
                     can save the recipe.
+                </p>
+            </cardX>
+            <cardXvid class="fade-in" v-bind:width="448" v-bind:height="800">
+                <video slot="video" width="475" height="800" autoplay loop>
+                    <source src="/demo3.mp4" type="video/mp4" />
+                    Your browser does not support video format.
+                </video>
+            </cardXvid>
+
+            <cardX class="fade-in" v-bind:width="300" v-bind:height="425">
+                <h1 slot="header">Customization</h1>
+                <p slot="content">
+                    ---<br />Other features include the ability to like and
+                    dislike recipes as well as commenting on recipes. In
+                    addition, users have the ability to create their own custom
+                    recipes. On the recipe page, they can view their saved
+                    recipes as well as create new recipes. They can view their
+                    custom recipes on their profile page.
                 </p>
             </cardX>
         </div>
@@ -133,11 +147,13 @@
 
 <script>
 import cardX from "./cardXFFT.vue";
+import cardXvid from "./cardXFFTvid.vue";
 
 export default {
     name: "GH",
     components: {
         cardX,
+        cardXvid,
     },
     mounted() {
         this.fadeInElements = Array.from(
