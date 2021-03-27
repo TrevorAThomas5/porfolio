@@ -117,7 +117,7 @@ export default {
 .anim {
     width: 6400px;
     height: 198px;
-    color: white;
+    color: #FF89A3;
 
     margin: 0px;
     position: absolute;
@@ -159,13 +159,16 @@ export default {
         inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
     transition: 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     transform: scale(1);
+
+
+
 }
 
 .card-wrap {
     margin: 10px;
     transform: perspective(800px);
     transform-style: preserve-3d;
-}
+}   
 
 .card-bg {
     position: absolute;
@@ -178,18 +181,19 @@ export default {
     background-position: center;
     background-size: cover;
 
-    background: black;
-
+    background: white;
+    
+    
     transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
         opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .cardInfo {
+    color: black;
     margin-left: 15px;
     margin-right: 15px;
     align-self: center;
-    color: white;
-    mix-blend-mode: difference;
+    z-index: 40;
 }
 
 .cardInfo h1 {

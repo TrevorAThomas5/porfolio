@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div class="top">
+
+ 
+
     <div class="cardContainer">
       <aboutCard
         v-bind:clickFunction="this.expandAbout"
@@ -149,6 +152,95 @@ export default {
 </script>
 
 <style scoped>
+.sqr1 {
+  background: black;
+  height: 50%;
+  width: 50%;
+  animation: rotate infinite linear;
+  mix-blend-mode: multiply;
+  margin: 0 -8%;
+  animation-duration: 2s;
+}
+
+.sqr2 {
+  background: black;
+  height: 40%;
+  width: 50%;
+  animation: rotate infinite linear;
+  mix-blend-mode: multiply;
+  margin: 0 -8%;
+  animation-direction: reverse;
+  animation-duration: 4s;
+}
+
+.sqr3 {
+    background: black;
+  height: 55%;
+  width: 50%;
+  animation: rotate infinite linear;
+  mix-blend-mode: multiply;
+  margin: 0 -8%;
+  animation-duration: 6s;
+}
+
+.sqr4 {
+    background: black;
+  width: 50%;
+  height: 60%;
+  animation: rotate infinite linear;
+  mix-blend-mode: multiply;
+  animation-direction: reverse;
+  margin: 0 -8%;
+  animation-duration: 3s;
+}
+
+
+.trevorContainer {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: difference;
+}
+
+@keyframes rotate {
+  100%{transform: rotate(360deg)}
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trevor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    animation: text 1.5s infinite;
+    letter-spacing: .3em;
+    font-size: 200px;
+}
+
+@keyframes text {
+  0% {text-shadow: 5px 0px 0px white;}
+  10%{text-shadow: -5px -5px 0px gray;}
+  20% {text-shadow: 5px 0px 0px DarkGray;}
+  30% {text-shadow: 5px 0px 0px DarkSlateGrey;}
+  40% {text-shadow: 5px 5px 0px DimGrey;}
+  50%{text-shadow:  0px -5px 0px FloralWhite;}
+  60% {text-shadow: 0px 5px 0px Gainsboro;}
+  70% {text-shadow: 5px 0px 0px GhostWhite;}
+  80% {text-shadow: 5px -10px 0px LightGray;}
+  90%{text-shadow: 5px 5px 0px LightSteelBlue;}
+  100% {text-shadow: 5px 0px 0px LightSlateGrey;}
+}
+
 .blah {
   text-align: left;
 }

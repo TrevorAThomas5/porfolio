@@ -16,7 +16,7 @@
             <div class="centerIt">
                 <cardX class="fade-in" v-bind:width="300" v-bind:height="300">
                     <h1 slot="header">What is it?</h1>
-                    <p slot="content">---<br>A raycast render engine heavily based on id Tech 1, more commonly known as the Doom engine.</p>
+                    <p slot="content">---<br>A software render engine heavily based on id Tech 1, more commonly known as the Doom engine.</p>
                 </cardX>
                 <cardX class="fade-in" v-bind:width="300" v-bind:height="300">
                 <p slot="content">My goal with this project was to flex my C++ muscles, mainly in regards to optimization.<br><br>This engine utilizes exclusively the CPU, meaning there is little room for wasted resources.</p>
@@ -28,25 +28,29 @@
                     <p slot="content">---<br>This project began as a simple 2D game engine.<br>However, the scope of the project quickly explanded.<br><br>I had always been interested in the rendering algorithms put to use by id Software in the 1990s.</p>
                 </cardX>
                 <cardX class="fade-in" v-bind:width="300" v-bind:height="250">
-                <p slot="content">Here is a visual of the project early on.<br><br>The player is just a dot rendered either in respect to himself, or to the center of the world.</p>
+                <p slot="content">Here is a visualization of the project early on.<br><br>The player is just a dot rendered either in respect to himself, or to the center of the world.</p>
                 </cardX>
             </div>
             <cardX class="fade-in" v-bind:width="600" v-bind:height="600"></cardX>
 
-            
-            
-
-            <cardX class="fade-in" v-bind:width="750" v-bind:height="500"></cardX>
-            <cardX class="fade-in" v-bind:width="500" v-bind:height="300">
+            <cardX class="fade-in" v-bind:width="750" v-bind:height="400"></cardX>
+            <cardX class="fade-in" v-bind:width="450" v-bind:height="250">
                 <h1 slot="header">Map Support</h1>
-                <p slot="content">---<br></p>
+                <p slot="content">---<br>The engine reads map data from a file and converts this data into a 3D render.<br><br>This file consists of vertice and shape data, with shapes being combinations of vertices.</p>
             </cardX>
-            <cardX class="fade-in" v-bind:width="400" v-bind:height="300"></cardX>
+            <cardX class="fade-in" v-bind:width="500" v-bind:height="200">
+            <p slot="content"><b>The file format is as follows:</b><br><br><b>Vertices: </b>v [x-pos] [y-pos]<br><br><b>Shapes: </b>s [z-bot] [z-top] [vert-1] [vert-2] [vert-3]</p>
+            </cardX>
             
             
             <div class="centerIt">    
-                <cardX class="fade-in" v-bind:width="400" v-bind:height="300"></cardX>
-                <cardX class="fade-in" v-bind:width="400" v-bind:height="300"></cardX>
+                <cardX class="fade-in" v-bind:width="400" v-bind:height="350">
+                    <h1 slot="header">How it Works</h1>
+                    <p slot="content">---<br>This project uses SDL to create and draw to the screen.<br><br>The render algorithm involves the creation of a projection, view, and transformation matrix which are multiplied with the player's position to convert 2D data to 3D space.</p>
+                </cardX>
+                <cardX class="fade-in" v-bind:width="420" v-bind:height="200">
+                <p slot="header">If you want to learn more about this, you can check out the Wikipedia page for id Tech 1:<br><br>https://en.wikipedia.org/wiki/Doom_engine</p>
+                </cardX>
             </div>
             <cardX class="fade-in" v-bind:width="400" v-bind:height="600"></cardX>
 
@@ -119,6 +123,14 @@ export default {
 </script>
 
 <style>
+.backContainer {
+  position: fixed;
+  top: 35px;
+  left: 25px;
+  width: 50px;
+  z-index: 10;
+  cursor: pointer;
+}
 
 .fade-in {
     opacity: 0;
@@ -128,6 +140,7 @@ export default {
 
 .scrollBox {
     margin-top: 15vh;
+    margin-bottom: 200px;
     width: 1200px;
     padding-bottom: 200px;
     justify-content: center;
