@@ -1,61 +1,130 @@
 <template>
     <div>
-        <div onclick="window.location.href='/#/projects';" class="backContainer">
+        <div
+            onclick="window.location.href='/#/projects';"
+            class="backContainer"
+        >
             <img src="/left-arrow.svg" />
         </div>
-       
+
         <div class="scrollContainer">
             <h1 class="scrollText">Scroll</h1>
             <div class="scrollImg">
                 <img src="/arrow-down-solid.svg" />
             </div>
         </div>
-        
+
         <div class="scrollBox">
-            <cardX class="fade-in" v-bind:width="800" v-bind:height="600"></cardX>
-            <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="300">
-                    <h1 slot="header">What is it?</h1>
-                    <p slot="content">---<br>A software render engine heavily based on id Tech 1, more commonly known as the Doom engine.</p>
-                </cardX>
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="300">
-                <p slot="content">My goal with this project was to flex my C++ muscles, mainly in regards to optimization.<br><br>This engine utilizes exclusively the CPU, meaning there is little room for wasted resources.</p>
-                </cardX>
+            <div class="space">
+                <cardXvid
+                    class="fade-in"
+                    v-bind:width="780"
+                    v-bind:height="700"
+                >
+                    <video slot="video" height="700" width="800" loop autoplay>
+                        <source src="/GH1.mp4" type="video/mp4" />
+                        Your browser does not support video format.
+                    </video>
+                </cardXvid>
+                <div class="centerIt">
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="300"
+                    >
+                        <h1 slot="header">What is it?</h1>
+                        <p slot="content">
+                            ---<br />A software render engine heavily based on
+                            id Tech 1, more commonly known as the Doom engine.
+                        </p>
+                    </cardX>
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="300"
+                    >
+                        <p slot="content">
+                            My goal with this project was to flex my C++
+                            muscles, mainly in regards to optimization.<br /><br />This
+                            engine utilizes exclusively the CPU, meaning there
+                            is little room for wasted resources.
+                        </p>
+                    </cardX>
+                </div>
             </div>
-            <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="400">
-                    <h1 slot="header">The Start</h1>
-                    <p slot="content">---<br>This project began as a simple 2D game engine.<br>However, the scope of the project quickly explanded.<br><br>I had always been interested in the rendering algorithms put to use by id Software in the 1990s.</p>
-                </cardX>
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="250">
-                <p slot="content">Here is a visualization of the project early on.<br><br>The player is just a dot rendered either in respect to himself, or to the center of the world.</p>
-                </cardX>
-            </div>
-            <cardX class="fade-in" v-bind:width="600" v-bind:height="600"></cardX>
 
-            <cardX class="fade-in" v-bind:width="750" v-bind:height="400"></cardX>
-            <cardX class="fade-in" v-bind:width="450" v-bind:height="250">
-                <h1 slot="header">Map Support</h1>
-                <p slot="content">---<br>The engine reads map data from a file and converts this data into a 3D render.<br><br>This file consists of vertice and shape data, with shapes being combinations of vertices.</p>
-            </cardX>
-            <cardX class="fade-in" v-bind:width="500" v-bind:height="200">
-            <p slot="content"><b>The file format is as follows:</b><br><br><b>Vertices: </b>v [x-pos] [y-pos]<br><br><b>Shapes: </b>s [z-bot] [z-top] [vert-1] [vert-2] [vert-3]</p>
-            </cardX>
-            
-            
-            <div class="centerIt">    
-                <cardX class="fade-in" v-bind:width="400" v-bind:height="350">
+            <div class="space">
+                <div class="centerIt">
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="400"
+                    >
+                        <h1 slot="header">The Start</h1>
+                        <p slot="content">
+                            ---<br />This project began as a simple 2D game
+                            engine.<br />However, the scope of the project
+                            quickly explanded.<br /><br />I had always been
+                            interested in the rendering algorithms put to use by
+                            id Software in the 1990s.
+                        </p>
+                    </cardX>
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="250"
+                    >
+                        <p slot="content">
+                            Here is a visualization of the project early on.<br /><br />The
+                            player is just a dot rendered either in respect to
+                            himself, or to the center of the world.
+                        </p>
+                    </cardX>
+                </div>
+                <cardXvid
+                    class="fade-in"
+                    v-bind:width="610"
+                    v-bind:height="550"
+                >
+                    <video slot="video" height="550" width="610" loop autoplay>
+                        <source src="/GH2.mp4" type="video/mp4" />
+                        Your browser does not support video format.
+                    </video>
+                </cardXvid>
+                
+            </div>
+
+
+
+            <cardXvid
+                    class="fade-in"
+                    v-bind:width="610"
+                    v-bind:height="550"
+                >
+                    <video slot="video" height="550" width="610" loop autoplay>
+                        <source src="/GH3.mp4" type="video/mp4" />
+                        Your browser does not support video format.
+                    </video>
+                </cardXvid>
+            <div class="centerIt">
+                <cardX class="fade-in" v-bind:width="410" v-bind:height="350">
                     <h1 slot="header">How it Works</h1>
-                    <p slot="content">---<br>This project uses SDL to create and draw to the screen.<br><br>The render algorithm involves the creation of a projection, view, and transformation matrix which are multiplied with the player's position to convert 2D data to 3D space.</p>
+                    <p slot="content">
+                        ---<br />This project uses SDL to create and draw to the
+                        screen.<br /><br />The render algorithm involves the
+                        creation of a projection, view, and transformation
+                        matrix which are multiplied with the player's position
+                        to convert 2D data to 3D space.
+                    </p>
                 </cardX>
-                <cardX class="fade-in" v-bind:width="420" v-bind:height="200">
-                <p slot="header">If you want to learn more about this, you can check out the Wikipedia page for id Tech 1:<br><br>https://en.wikipedia.org/wiki/Doom_engine</p>
+                <cardX class="fade-in" v-bind:width="410" v-bind:height="200">
+                    <p slot="header">
+                        If you want to learn more about this, you can check out
+                        the Wikipedia page for id Tech 1:<br /><br />https://en.wikipedia.org/wiki/Doom_engine
+                    </p>
                 </cardX>
             </div>
-            <cardX class="fade-in" v-bind:width="400" v-bind:height="600"></cardX>
-
         </div>
-
 
         <div class="contactContainer">
             <p class="contactE">https://github.com/TrevorAThomas5/SDLtest</p>
@@ -64,72 +133,82 @@
             <div class="contactInfo">
                 <p class="contact">contact me ——</p>
                 <img
-                class="icon2"
-                onclick="window.location.href='https://github.com/TrevorAThomas5'"
-                src="/github-brands.svg"
+                    class="icon2"
+                    onclick="window.location.href='https://github.com/TrevorAThomas5'"
+                    src="/github-brands.svg"
                 />
                 <div class="mailWrapper">
                     <img
-                    class="icon1"
-                    onclick="window.location.href='https://www.linkedin.com/in/trevor-thomas-67988b1b6/'"
-                    src="/envelope-regular.svg"
+                        class="icon1"
+                        onclick="window.location.href='https://www.linkedin.com/in/trevor-thomas-67988b1b6/'"
+                        src="/envelope-regular.svg"
                     />
                 </div>
             </div>
         </div>
-
-
     </div>
 </template>
 
 <script>
 import cardX from "./cardX.vue";
+import cardXvid from "./cardXFFTvid.vue";
 
 export default {
-  name: "GH",
-  components: {
-    cardX,
-  },
-  mounted() {
-    this.fadeInElements = Array.from(document.getElementsByClassName('fade-in'))
-    document.addEventListener('scroll', this.handleScroll);
-    this.handleScroll();
-  },
-  destroyed()  {
-    document.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-      handleScroll() {
-        for (var i = 0; i < this.fadeInElements.length; i++) {
-            var elem = this.fadeInElements[i]
-            if (this.isCardVisible(elem)) {
-              elem.style.opacity = '1';
-              elem.getElementsByClassName("card")[0].style.transform = 'scale(1) translate(0px, 0px)';
+    name: "GH",
+    components: {
+        cardX,
+        cardXvid,
+    },
+    mounted() {
+        this.fadeInElements = Array.from(
+            document.getElementsByClassName("fade-in")
+        );
+        document.addEventListener("scroll", this.handleScroll);
+        this.handleScroll();
+    },
+    destroyed() {
+        document.removeEventListener("scroll", this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            for (var i = 0; i < this.fadeInElements.length; i++) {
+                var elem = this.fadeInElements[i];
+                if (this.isCardVisible(elem)) {
+                    elem.style.opacity = "1";
+                    elem.getElementsByClassName("card")[0].style.transform =
+                        "scale(1) translate(0px, 0px)";
+                } else {
+                    elem.style.opacity = "0";
+                    elem.getElementsByClassName("card")[0].style.transform =
+                        "scale(0.9) translate(0px, 100px)";
+                }
             }
-            else {
-                elem.style.opacity = '0';
-                elem.getElementsByClassName("card")[0].style.transform = 'scale(0.9) translate(0px, 100px)';
-            }
-        }
-      },
-      isCardVisible(card) {
-        var rect = card.getBoundingClientRect();
-        var cardTop = rect.top + 200;    
-        var cardBottom = rect.bottom;
-        return cardTop < (window.innerHeight-300) && cardBottom >= 200
-      },
-  },
+        },
+        isCardVisible(card) {
+            var rect = card.getBoundingClientRect();
+            var cardTop = rect.top + 200;
+            var cardBottom = rect.bottom;
+            return cardTop < window.innerHeight - 300 && cardBottom >= 200;
+        },
+    },
 };
 </script>
 
 <style>
+.space {
+    margin-bottom: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .backContainer {
-  position: fixed;
-  top: 35px;
-  left: 25px;
-  width: 50px;
-  z-index: 10;
-  cursor: pointer;
+    position: fixed;
+    top: 35px;
+    left: 25px;
+    width: 50px;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .fade-in {
@@ -150,48 +229,48 @@ export default {
 }
 
 .contactContainer {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
-  position: fixed;
-  bottom: 50px;
-  left: 50vw;
-  transform: translateX(-50%);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    position: fixed;
+    bottom: 50px;
+    left: 50vw;
+    transform: translateX(-50%);
 }
 
-.contact { 
- text-align: left;
- font-weight: 100;
-  font-family: "Playfair Display";
-  font-size: 20px;
+.contact {
+    text-align: left;
+    font-weight: 100;
+    font-family: "Playfair Display";
+    font-size: 20px;
 }
 
-.contactE { 
- text-align: left;
- font-weight: 100;
-  font-family: "Playfair Display";
-  font-size: 15px;
+.contactE {
+    text-align: left;
+    font-weight: 100;
+    font-family: "Playfair Display";
+    font-size: 15px;
 }
 
 .icon1,
 .icon2 {
-  height: 20px;
-  cursor: pointer;
+    height: 20px;
+    cursor: pointer;
 }
 
 .icon1 {
-  margin-left: 7px;
+    margin-left: 7px;
 }
 
 .icon2 {
-  margin-left: 7px;
+    margin-left: 7px;
 }
 
 .mailWrapper {
-  height: 20px;
-  width: 20px;
+    height: 20px;
+    width: 20px;
 }
 
 .contactInfo {
@@ -200,14 +279,14 @@ export default {
 }
 
 .scrollContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 35px;
-  right: 50px;
-  z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 35px;
+    right: 50px;
+    z-index: 10;
 }
 
 .scrollText {

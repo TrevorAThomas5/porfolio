@@ -15,78 +15,117 @@
         </div>
 
         <div class="scrollBox">
-            <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="300">
-                    <h1 slot="header">What is it?</h1>
-                    <p slot="content">
-                        ---<br />Food for Thought is an Android app that helps
-                        people to find recipes based off of ingredients in their
-                        inventory. There are five main components to our app.
-                    </p>
-                </cardX>
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="250">
-                    <p slot="content">
-                        From left to right in the bottom of the navigation bar:
-                        a recipe page, a recipe feed on the main page, an
-                        inventory page, a shopping page, and a profile page.
-                    </p>
-                </cardX>
-            </div>
-            <cardXvid class="fade-in" v-bind:width="448" v-bind:height="800">
-                <video slot="video" width="475" height="800" autoplay loop>
-                    <source src="/demo1.mp4" type="video/mp4" />
-                    Your browser does not support video format.
-                </video>
-            </cardXvid>
-            <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="275">
-                    <h1 slot="header">My Role</h1>
-                    <p slot="content">
-                        ---<br />I served as the lead fontend developer on this
-                        project. I mainly worked on recipe information page,
-                        setting the tone for the rest of the UI on the entire
-                        project.
-                    </p>
-                </cardX>
-                <cardX class="fade-in" v-bind:width="300" v-bind:height="400">
-                    <h1 slot="header">Technology</h1>
-                    <p slot="content">
-                        ---<br />This project was built for Andriod using
-                        Andriod Studio, Java, and Firebase.<br /><br />The
-                        project was completed in 10 weeks by a group of 10
-                        people. We worked under the Agile software development
-                        paradigm.
-                    </p>
-                </cardX>
+            <div class="space">
+                <div class="centerIt">
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="300"
+                    >
+                        <h1 slot="header">What is it?</h1>
+                        <p slot="content">
+                            ---<br />Food for Thought is an Android app that
+                            helps people to find recipes based off of
+                            ingredients in their inventory. There are five main
+                            components to our app.
+                        </p>
+                    </cardX>
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="250"
+                    >
+                        <p slot="content">
+                            From left to right in the bottom of the navigation
+                            bar: a recipe page, a recipe feed on the main page,
+                            an inventory page, a shopping page, and a profile
+                            page.
+                        </p>
+                    </cardX>
+                </div>
+                <cardXvid
+                    class="fade-in"
+                    v-bind:width="448"
+                    v-bind:height="800"
+                >
+                    <video slot="video" width="475" height="800" autoplay loop>
+                        <source src="/demo1.mp4" type="video/mp4" />
+                        Your browser does not support video format.
+                    </video>
+                </cardXvid>
+                <div class="centerIt">
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="275"
+                    >
+                        <h1 slot="header">My Role</h1>
+                        <p slot="content">
+                            ---<br />I served as the lead fontend developer on
+                            this project. I mainly worked on recipe information
+                            page, setting the tone for the rest of the UI on the
+                            entire project.
+                        </p>
+                    </cardX>
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="300"
+                        v-bind:height="400"
+                    >
+                        <h1 slot="header">Technology</h1>
+                        <p slot="content">
+                            ---<br />This project was built for Andriod using
+                            Andriod Studio, Java, and Firebase.<br /><br />The
+                            project was completed in 10 weeks by a group of 10
+                            people. We worked under the Agile software
+                            development paradigm.
+                        </p>
+                    </cardX>
+                </div>
             </div>
 
-            <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="400" v-bind:height="300">
-                    <h1 slot="header">Shopping</h1>
-                    <p slot="content">
-                        ---<br />Users can place all the ingredients they want
-                        to buy in the shopping list page. When users have
-                        purchased the ingredients at the store, they can click
-                        the checkmark next to the ingredient and it will
-                        transfer the ingredients to their inventory list.
-                    </p>
-                </cardX>
-                <cardX class="fade-in" v-bind:width="400" v-bind:height="225">
-                    <p slot="content">
-                        Alternatively, users can add ingredients that they
-                        already own to their inventory page. Once they have
-                        items in their inventory, the user can see the recipes
-                        that can be made with the ingredients in their inventory
-                        on the main page.
-                    </p>
-                </cardX>
+            <div class="space">
+                <div class="centerIt">
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="400"
+                        v-bind:height="300"
+                    >
+                        <h1 slot="header">Shopping</h1>
+                        <p slot="content">
+                            ---<br />Users can place all the ingredients they
+                            want to buy in the shopping list page. When users
+                            have purchased the ingredients at the store, they
+                            can click the checkmark next to the ingredient and
+                            it will transfer the ingredients to their inventory
+                            list.
+                        </p>
+                    </cardX>
+                    <cardX
+                        class="fade-in"
+                        v-bind:width="400"
+                        v-bind:height="225"
+                    >
+                        <p slot="content">
+                            Alternatively, users can add ingredients that they
+                            already own to their inventory page. Once they have
+                            items in their inventory, the user can see the
+                            recipes that can be made with the ingredients in
+                            their inventory on the main page.
+                        </p>
+                    </cardX>
+                </div>
+                <cardXvid
+                    class="fade-in"
+                    v-bind:width="448"
+                    v-bind:height="800"
+                >
+                    <video slot="video" width="475" height="800" autoplay loop>
+                        <source src="/demo2.mp4" type="video/mp4" />
+                        Your browser does not support video format.
+                    </video>
+                </cardXvid>
             </div>
-            <cardXvid class="fade-in" v-bind:width="448" v-bind:height="800">
-                <video slot="video" width="475" height="800" autoplay loop>
-                    <source src="/demo2.mp4" type="video/mp4" />
-                    Your browser does not support video format.
-                </video>
-            </cardXvid>
             <cardX class="fade-in" v-bind:width="300" v-bind:height="500">
                 <h1 slot="header">Feed</h1>
                 <p slot="content">
@@ -191,6 +230,13 @@ export default {
 </script>
 
 <style>
+.space {
+    margin-bottom: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .backContainer {
     position: fixed;
     top: 35px;
