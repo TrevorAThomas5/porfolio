@@ -7,7 +7,7 @@
             <img src="/left-arrow.svg" />
         </div>
 
-        <div class="scrollContainer">
+        <div class="scrollContainer1">
             <h1 class="scrollText">Scroll</h1>
             <div class="scrollImg">
                 <img src="/arrow-down-solid.svg" />
@@ -126,18 +126,15 @@
             </div>
         </div>
 
-        <div class="contactContainer">
-            <p class="contactE">https://github.com/TrevorAThomas5/SDLtest</p>
-            <p class="contactE">tathomas@ucsd.edu</p>
-            <p class="contactE">TrevorAThomas5@gmail.com</p>
-            <div class="contactInfo">
-                <p class="contact">contact me ——</p>
+        <div class="contactContainer1">
+            <div class="contactInfo1">
+                <p class="contact1">contact me ——</p>
                 <img
                     class="icon2"
                     onclick="window.location.href='https://github.com/TrevorAThomas5'"
                     src="/github-brands.svg"
                 />
-                <div class="mailWrapper">
+                <div class="mailWrapper1">
                     <img
                         class="icon1"
                         onclick="window.location.href='https://www.linkedin.com/in/trevor-thomas-67988b1b6/'"
@@ -145,7 +142,11 @@
                     />
                 </div>
             </div>
-        </div>
+
+            <p class="contactE1">https://github.com/TrevorAThomas5/SDLtest</p>
+            <p class="contactE1">TrevorAThomas5@gmail.com</p>
+            <p class="contactE1">tathomas@ucsd.edu</p>
+                    </div>
     </div>
 </template>
 
@@ -164,12 +165,18 @@ export default {
             document.getElementsByClassName("fade-in")
         );
         document.addEventListener("scroll", this.handleScroll);
+        document.addEventListener("scroll", this.initScroll);
         this.handleScroll();
     },
     destroyed() {
-        document.removeEventListener("scroll", this.handleScroll);
+        document.removeEventListener("scroll", this.handleScroll);1
+        document.removeEventListener("scroll", this.initScroll);1
     },
     methods: {
+        initScroll() {
+            var elem = document.getElementsByClassName("scrollContainer1")[0];
+            elem.style.opacity = "0";
+        },
         handleScroll() {
             for (var i = 0; i < this.fadeInElements.length; i++) {
                 var elem = this.fadeInElements[i];
@@ -228,27 +235,26 @@ export default {
     flex-wrap: wrap;
 }
 
-.contactContainer {
-    text-align: left;
+.contactContainer1 {
+    text-align: right;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: left;
+    align-items: flex-end;
+    justify-content: right;
     position: fixed;
-    bottom: 50px;
-    left: 50vw;
-    transform: translateX(-50%);
+    top: 50px;
+    right: 50px;
 }
 
-.contact {
-    text-align: left;
+.contact1 {
+    text-align: right;
     font-weight: 100;
     font-family: "Playfair Display";
     font-size: 20px;
 }
 
-.contactE {
-    text-align: left;
+.contactE1 {
+    text-align: right;
     font-weight: 100;
     font-family: "Playfair Display";
     font-size: 15px;
@@ -256,6 +262,7 @@ export default {
 
 .icon1,
 .icon2 {
+    text-align: right;
     height: 20px;
     cursor: pointer;
 }
@@ -268,24 +275,30 @@ export default {
     margin-left: 7px;
 }
 
-.mailWrapper {
+.mailWrapper1 {
+    text-align:right;
     height: 20px;
     width: 20px;
 }
 
-.contactInfo {
+.contactInfo1 {
+    text-align: right;
     display: flex;
+    align-items: flex-end;
+    justify-content: right;
     flex-direction: row;
 }
 
-.scrollContainer {
+.scrollContainer1 {
+    transition: 1s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 35px;
-    right: 50px;
+    bottom: 50px;
+    left: 50vw;
+    transform: translateX(-50%);
     z-index: 10;
 }
 
@@ -297,8 +310,22 @@ export default {
 
 .scrollImg {
     width: 45px;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
-
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 .centerIt {
     display: flex;
     flex-direction: column;

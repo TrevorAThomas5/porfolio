@@ -7,14 +7,14 @@
             <img src="/left-arrow.svg" />
         </div>
 
-        <div class="scrollContainer">
+        <div class="scrollContainer1">
             <h1 class="scrollText">Scroll</h1>
             <div class="scrollImg">
                 <img src="/arrow-down-solid.svg" />
             </div>
         </div>
 
-        <div class="scrollBox">
+        <div class="scrollBox1">
             <div class="space">
                 <div class="centerIt">
                     <cardX
@@ -159,20 +159,15 @@
             </cardX>
         </div>
 
-        <div class="contactContainer">
-            <p class="contactE">
-                https://github.com/jo32pilot/Food-for-Thought
-            </p>
-            <p class="contactE">tathomas@ucsd.edu</p>
-            <p class="contactE">TrevorAThomas5@gmail.com</p>
-            <div class="contactInfo">
-                <p class="contact">contact me ——</p>
+        <div class="contactContainer1"> 
+            <div class="contactInfo1">
+                <p class="contact1">contact me ——</p>
                 <img
                     class="icon2"
                     onclick="window.location.href='https://github.com/TrevorAThomas5'"
                     src="/github-brands.svg"
                 />
-                <div class="mailWrapper">
+                <div class="mailWrapper1">
                     <img
                         class="icon1"
                         onclick="window.location.href='https://www.linkedin.com/in/trevor-thomas-67988b1b6/'"
@@ -180,7 +175,13 @@
                     />
                 </div>
             </div>
-        </div>
+
+            <p class="contactE1">
+                https://github.com/jo32pilot/Food-for-Thought
+            </p>
+            <p class="contactE1">TrevorAThomas5@gmail.com</p>
+            <p class="contactE1">tathomas@ucsd.edu</p>
+                   </div>
     </div>
 </template>
 
@@ -199,12 +200,18 @@ export default {
             document.getElementsByClassName("fade-in")
         );
         document.addEventListener("scroll", this.handleScroll);
+        document.addEventListener("scroll", this.initScroll);
         this.handleScroll();
     },
     destroyed() {
         document.removeEventListener("scroll", this.handleScroll);
+        document.removeEventListener("scroll", this.initScroll);
     },
     methods: {
+        initScroll() {
+            var elem = document.getElementsByClassName("scrollContainer1")[0];
+            elem.style.opacity = "0";
+        },
         handleScroll() {
             for (var i = 0; i < this.fadeInElements.length; i++) {
                 var elem = this.fadeInElements[i];
@@ -252,8 +259,8 @@ export default {
     cursor: default;
 }
 
-.scrollBox {
-    margin-top: 15vh;
+.scrollBox1 {
+    margin-top: 10vh;
     margin-bottom: 200px;
     width: 1200px;
     padding-bottom: 200px;
