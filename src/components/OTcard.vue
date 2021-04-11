@@ -9,7 +9,6 @@
     <div class="card" :style="[cardStyle, blurred]" v-on:click="this.handlePress">
       <div class="unityWrapper">
         <img class="unity" src="opengl.svg" />
-        <img class="unity" src="/java-brands.svg" />
         <img class="unity" src="/c-logo.svg" />
       </div>
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
@@ -33,8 +32,8 @@ export default {
   },
   data: () => {
     return {
-      width: 240,
-      height: 320,
+      width: 144,
+      height: 192,
       mouseX: 0,
       mouseY: 0,
       mouseLeaveDelay: null,
@@ -76,7 +75,7 @@ export default {
     },
     cardBgImage() {
       return {
-        backgroundImage: `url('/OT.png')`,
+        backgroundImage: `url('/mash.png')`,
       };
     },
   },
@@ -109,8 +108,8 @@ export default {
 .card {
   position: relative;
   flex: 0 0 240px;
-  width: 240px;
-  height: 320px;
+  width: 144px;
+  height: 192px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -181,6 +180,7 @@ export default {
 }
 .card-info p,
 .card-info div {
+  font-size: 10px;
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -192,7 +192,7 @@ export default {
 
 .card-info h1 {
   font-family: "Playfair Display";
-  font-size: 36px;
+  font-size: 21px;
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
   margin: 0;
@@ -226,19 +226,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
-  width: 90px;
+  height: 20px;
+  width: 40px;
   position: absolute;
   top: 10px;
-  right: 25px;
+  right: 15px;
 
   z-index: 5;
 }
 
 .unity {
   margin-left: 5px;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
 }
 </style>

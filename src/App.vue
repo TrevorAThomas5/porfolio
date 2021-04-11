@@ -17,6 +17,7 @@ export default {
 }
 html, body {
     overscroll-behavior: none;
+   
 }
 body {
   font-family: "Fonti";

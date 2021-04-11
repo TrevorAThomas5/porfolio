@@ -8,7 +8,7 @@
         </div>
 
         <div class="scrollContainer1">
-            <h1 class="scrollText">Scroll</h1>
+            <h1 class="scrollText">scroll</h1>
             <div class="scrollImg">
                 <img src="/arrow-down-solid.svg" />
             </div>
@@ -19,8 +19,8 @@
                 <div class="centerIt">
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="300"
+                        v-bind:width="200"
+                        v-bind:height="200"
                     >
                         <h1 slot="header">What is it?</h1>
                         <p slot="content">
@@ -32,8 +32,8 @@
                     </cardX>
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="250"
+                        v-bind:width="200"
+                        v-bind:height="150"
                     >
                         <p slot="content">
                             From left to right in the bottom of the navigation
@@ -45,10 +45,10 @@
                 </div>
                 <cardXvid
                     class="fade-in"
-                    v-bind:width="448"
-                    v-bind:height="800"
+                    v-bind:width="278"
+                    v-bind:height="500"
                 >
-                    <video slot="video" width="475" height="800" autoplay loop>
+                    <video slot="video" width="300" height="500" autoplay loop>
                         <source src="/demo1.mp4" type="video/mp4" />
                         Your browser does not support video format.
                     </video>
@@ -56,8 +56,8 @@
                 <div class="centerIt">
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="275"
+                        v-bind:width="200"
+                        v-bind:height="175"
                     >
                         <h1 slot="header">My Role</h1>
                         <p slot="content">
@@ -69,8 +69,8 @@
                     </cardX>
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="400"
+                        v-bind:width="200"
+                        v-bind:height="275"
                     >
                         <h1 slot="header">Technology</h1>
                         <p slot="content">
@@ -88,8 +88,8 @@
                 <div class="centerIt">
                     <cardX
                         class="fade-in"
-                        v-bind:width="400"
-                        v-bind:height="300"
+                        v-bind:width="300"
+                        v-bind:height="200"
                     >
                         <h1 slot="header">Shopping</h1>
                         <p slot="content">
@@ -103,8 +103,8 @@
                     </cardX>
                     <cardX
                         class="fade-in"
-                        v-bind:width="400"
-                        v-bind:height="225"
+                        v-bind:width="300"
+                        v-bind:height="125"
                     >
                         <p slot="content">
                             Alternatively, users can add ingredients that they
@@ -117,16 +117,18 @@
                 </div>
                 <cardXvid
                     class="fade-in"
-                    v-bind:width="448"
-                    v-bind:height="800"
+                    v-bind:width="278"
+                    v-bind:height="500"
                 >
-                    <video slot="video" width="475" height="800" autoplay loop>
+                    <video slot="video" width="300" height="500" autoplay loop>
                         <source src="/demo2.mp4" type="video/mp4" />
                         Your browser does not support video format.
                     </video>
                 </cardXvid>
             </div>
-            <cardX class="fade-in" v-bind:width="300" v-bind:height="500">
+
+            <div class='spaceN'>
+            <cardX class="fade-in" v-bind:width="200" v-bind:height="400">
                 <h1 slot="header">Feed</h1>
                 <p slot="content">
                     ---<br />The recipe feed is created by taking the
@@ -139,14 +141,15 @@
                     can save the recipe.
                 </p>
             </cardX>
-            <cardXvid class="fade-in" v-bind:width="448" v-bind:height="800">
-                <video slot="video" width="475" height="800" autoplay loop>
+            <cardXvid class="fade-in" v-bind:width="278"
+                    v-bind:height="500">
+                <video slot="video" width="300" height="500" autoplay loop>
                     <source src="/demo3.mp4" type="video/mp4" />
                     Your browser does not support video format.
                 </video>
             </cardXvid>
 
-            <cardX class="fade-in" v-bind:width="300" v-bind:height="425">
+            <cardX class="fade-in" v-bind:width="200" v-bind:height="325">
                 <h1 slot="header">Customization</h1>
                 <p slot="content">
                     ---<br />Other features include the ability to like and
@@ -157,6 +160,7 @@
                     custom recipes on their profile page.
                 </p>
             </cardX>
+            </div>
         </div>
 
         <div class="contactContainer1"> 
@@ -230,7 +234,7 @@ export default {
             var rect = card.getBoundingClientRect();
             var cardTop = rect.top + 200;
             var cardBottom = rect.bottom;
-            return cardTop < window.innerHeight - 300 && cardBottom >= 200;
+            return cardTop < window.innerHeight - 200 && cardBottom >= 200;
         },
     },
 };
@@ -244,11 +248,18 @@ export default {
     justify-content: center;
 }
 
+.space {
+    margin-bottom: -200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .backContainer {
     position: fixed;
     top: 35px;
     left: 25px;
-    width: 50px;
+    width: 30px;
     z-index: 10;
     cursor: pointer;
 }
@@ -260,14 +271,14 @@ export default {
 }
 
 .scrollBox1 {
-    margin-top: 10vh;
+    margin-top: 15vh;
     margin-bottom: 200px;
-    width: 1200px;
+    width: 100%;
     padding-bottom: 200px;
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .contactContainer {

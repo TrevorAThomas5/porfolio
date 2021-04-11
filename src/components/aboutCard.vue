@@ -72,7 +72,7 @@ export default {
         };
       } else {
         return {
-          width: "240px",
+          width: "192px",
         };
       }
     },
@@ -92,7 +92,7 @@ export default {
       if (this.expanded === true) {
         return {
           boxShadow: "rgba(0, 0, 0, 0.66) 0 30px 60px 0",
-          width: "600px",
+          width: "450px",
           transform: "none",
           backgroundColor: "#fff1e6",
           borderTop: "6px solid #000000",
@@ -109,7 +109,7 @@ export default {
           top: "0px",
           right: "0px",
           transform: "none",
-          width: "300px",
+          width: "200px",
         };
       } else {
         return {};
@@ -153,8 +153,8 @@ export default {
 .card {
   position: relative;
   flex: 0 0 240px;
-  width: 240px;
-  height: 320px;
+  width: 192px;
+  height: 256px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -183,13 +183,6 @@ export default {
   opacity: 1;
 }
 
-/*
-.card-wrap:hover .card-info::after {
-  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
-  opacity: 1;
-  transform: translateY(0);
-}
-*/
 .card-wrap:hover .card-bg {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     opacity 1s cubic-bezier(0.23, 1, 0.32, 1);
@@ -233,6 +226,7 @@ export default {
 
 .card-info p,
 .card-info div {
+  font-size: 10px;
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -245,7 +239,7 @@ export default {
 
 .card-info h1 {
   font-family: "Playfair Display";
-  font-size: 36px;
+  font-size: 21px;
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
   margin: 0;

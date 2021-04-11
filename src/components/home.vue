@@ -39,7 +39,7 @@
         image="/blog2.png"
       >
         <h1 slot="header">Resume</h1>
-        <div slot="content">Find out if I'm the right fit for you.</div>
+        <div slot="content">Find out if I'm the right person for you.</div>
       </card>
     </div>
 
@@ -140,7 +140,7 @@ export default {
         this.notExpanded = true;
       } else {
         this.description =
-          "<h3><b>Trevor Thomas</b></h3><p>Software Developer/Web designer<div><img src='/loc.svg' /><b> San Diego, California</b><p style='text-align:left; margin-top: 20px; font-size: 18px; color: hsl(0, 0%, 29%); font-weight: 100;'> I love working on creative, practical, and elegant solutions to computational problems. I'm currently majoring in Computer Science at UCSD.</p><div>";
+          "<h1 style='font-size: 25px;'><b>Trevor Thomas</b></h1><p style='font-size: 13px;'>Software Developer/Web designer<div style='font-size: 13px;'><img style='width: 13px; height: 13px;' src='/loc.svg' /><b> San Diego, California</b><p style='text-align:left; margin-top: 20px; font-size: 13px; color: hsl(0, 0%, 29%); font-weight: 100;'> I love working on creative, practical, and elegant solutions to computational problems. I'm currently majoring in Computer Science at UCSD.</p><div>";
         this.notExpanded = false;
       }
     },
@@ -270,19 +270,19 @@ export default {
  text-align: left;
  font-weight: 100;
   font-family: "Playfair Display";
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .contactE { 
  text-align: left;
  font-weight: 100;
   font-family: "Playfair Display";
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .icon1,
 .icon2 {
-  height: 20px;
+  height: 14px;
   cursor: pointer;
 }
 
@@ -295,8 +295,8 @@ export default {
 }
 
 .mailWrapper {
-  height: 20px;
-  width: 20px;
+  height: 14px;
+  width: 14px;
 }
 
 .contactInfo {

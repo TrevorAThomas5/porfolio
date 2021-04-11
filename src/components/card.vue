@@ -105,8 +105,8 @@ export default {
 .card {
   position: relative;
   flex: 0 0 240px;
-  width: 240px;
-  height: 320px;
+  width: 192px;
+  height: 256px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -177,6 +177,7 @@ export default {
 }
 .card-info p,
 .card-info div {
+  font-size: 10px;
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -210,7 +211,7 @@ export default {
 }
 .card-info h1 {
   font-family: "Playfair Display";
-  font-size: 36px;
+  font-size: 21px;
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
   margin: 0;

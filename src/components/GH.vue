@@ -8,7 +8,7 @@
         </div>
 
         <div class="scrollContainer1">
-            <h1 class="scrollText">Scroll</h1>
+            <h1 class="scrollText">scroll</h1>
             <div class="scrollImg">
                 <img src="/arrow-down-solid.svg" />
             </div>
@@ -18,10 +18,10 @@
             <div class="space">
                 <cardXvid
                     class="fade-in"
-                    v-bind:width="780"
-                    v-bind:height="700"
+                    v-bind:width="440"
+                    v-bind:height="400"
                 >
-                    <video slot="video" height="700" width="800" loop autoplay>
+                    <video slot="video" height="400" width="500" loop autoplay>
                         <source src="/GH1.mp4" type="video/mp4" />
                         Your browser does not support video format.
                     </video>
@@ -29,8 +29,8 @@
                 <div class="centerIt">
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="300"
+                        v-bind:width="200"
+                        v-bind:height="200"
                     >
                         <h1 slot="header">What is it?</h1>
                         <p slot="content">
@@ -40,8 +40,8 @@
                     </cardX>
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="300"
+                        v-bind:width="200"
+                        v-bind:height="200"
                     >
                         <p slot="content">
                             My goal with this project was to flex my C++
@@ -57,8 +57,8 @@
                 <div class="centerIt">
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="400"
+                        v-bind:width="200"
+                        v-bind:height="300"
                     >
                         <h1 slot="header">The Start</h1>
                         <p slot="content">
@@ -71,8 +71,8 @@
                     </cardX>
                     <cardX
                         class="fade-in"
-                        v-bind:width="300"
-                        v-bind:height="250"
+                        v-bind:width="200"
+                        v-bind:height="150"
                     >
                         <p slot="content">
                             Here is a visualization of the project early on.<br /><br />The
@@ -83,10 +83,10 @@
                 </div>
                 <cardXvid
                     class="fade-in"
-                    v-bind:width="610"
-                    v-bind:height="550"
+                    v-bind:width="440"
+                    v-bind:height="400"
                 >
-                    <video slot="video" height="550" width="610" loop autoplay>
+                    <video slot="video" height="400" width="500" loop autoplay>
                         <source src="/GH2.mp4" type="video/mp4" />
                         Your browser does not support video format.
                     </video>
@@ -95,19 +95,19 @@
             </div>
 
 
-
+        <div class='spaceN'>
             <cardXvid
                     class="fade-in"
-                    v-bind:width="610"
-                    v-bind:height="550"
+                    v-bind:width="440"
+                    v-bind:height="400"
                 >
-                    <video slot="video" height="550" width="610" loop autoplay>
+                    <video slot="video" height="400" width="500" loop autoplay>
                         <source src="/GH3.mp4" type="video/mp4" />
                         Your browser does not support video format.
                     </video>
                 </cardXvid>
             <div class="centerIt">
-                <cardX class="fade-in" v-bind:width="410" v-bind:height="350">
+                <cardX class="fade-in" v-bind:width="300" v-bind:height="250">
                     <h1 slot="header">How it Works</h1>
                     <p slot="content">
                         ---<br />This project uses SDL to create and draw to the
@@ -117,7 +117,7 @@
                         to convert 2D data to 3D space.
                     </p>
                 </cardX>
-                <cardX class="fade-in" v-bind:width="410" v-bind:height="200">
+                <cardX class="fade-in" v-bind:width="300" v-bind:height="200">
                     <p slot="header">
                         If you want to learn more about this, you can check out
                         the Wikipedia page for id Tech 1:<br /><br />https://en.wikipedia.org/wiki/Doom_engine
@@ -125,6 +125,7 @@
                 </cardX>
             </div>
         </div>
+            </div>
 
         <div class="contactContainer1">
             <div class="contactInfo1">
@@ -195,7 +196,7 @@ export default {
             var rect = card.getBoundingClientRect();
             var cardTop = rect.top + 200;
             var cardBottom = rect.bottom;
-            return cardTop < window.innerHeight - 300 && cardBottom >= 200;
+            return cardTop < window.innerHeight - 200 && cardBottom >= 200;
         },
     },
 };
@@ -207,13 +208,22 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
+}
+
+.spaceN {
+    margin-bottom: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 .backContainer {
     position: fixed;
     top: 35px;
     left: 25px;
-    width: 50px;
+    width: 30px;
     z-index: 10;
     cursor: pointer;
 }
@@ -227,12 +237,11 @@ export default {
 .scrollBox {
     margin-top: 15vh;
     margin-bottom: 200px;
-    width: 1200px;
+    width: 100%;
     padding-bottom: 200px;
     justify-content: center;
-    align-items: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .contactContainer1 {
@@ -250,20 +259,20 @@ export default {
     text-align: right;
     font-weight: 100;
     font-family: "Playfair Display";
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .contactE1 {
     text-align: right;
     font-weight: 100;
     font-family: "Playfair Display";
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .icon1,
 .icon2 {
     text-align: right;
-    height: 20px;
+    height: 14px;
     cursor: pointer;
 }
 
@@ -277,8 +286,8 @@ export default {
 
 .mailWrapper1 {
     text-align:right;
-    height: 20px;
-    width: 20px;
+    height: 14px;
+    width: 14px;
 }
 
 .contactInfo1 {
@@ -304,12 +313,12 @@ export default {
 
 .scrollText {
     line-height: 0;
-    font-size: 40px;
+    font-size: 20px;
     text-align: left;
 }
 
 .scrollImg {
-    width: 45px;
+    width: 25px;
     animation: shake 0.5s;
     animation-iteration-count: infinite;
 }

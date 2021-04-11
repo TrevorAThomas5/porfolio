@@ -199,12 +199,12 @@ export default {
 
 .cardInfo h1 {
     line-height: 0;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .cardInfo p {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 100;
 }
 </style>

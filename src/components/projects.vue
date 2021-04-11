@@ -11,16 +11,16 @@
           <h1 slot="header">Food For Thought</h1>
           <div
             slot="content"
-          >Plan your meals. Manage your ingredients. Get new recipe reccommendations.</div>
+          >Plan your meals. Manage your ingredients. Get new recommendations.</div>
         </FFTcard>
       </div>
       <div class="triContainer">
         <div class="DS">
-          <DScard v-bind:isBlurred="this.DSblur" v-bind:touchFunction="hover" v-bind:off="off">
-            <h1 slot="header">Dream Sweeper</h1>
+          <DScard v-bind:clickFunction="openCatinal" v-bind:isBlurred="this.DSblur" v-bind:touchFunction="hover" v-bind:off="off">
+            <h1 slot="header">Catinal.io</h1>
             <div
               slot="content"
-            >Fight your way through a long lost kingdom, while also trying to keep up on your assignments.</div>
+            >Take care of your own digital pet cat. Return every day to see how he's doing.</div>
           </DScard>
         </div>
         <div class="smallDoubleContainer">
@@ -32,8 +32,8 @@
           </div>
           <div class="OT">
             <OTcard v-bind:isBlurred="this.OTblur" v-bind:touchFunction="hover" v-bind:off="off">
-              <h1 slot="header">OpenGL Tinkering</h1>
-              <div slot="content">See some of the graphical 3D rendering algorithms I have written.</div>
+              <h1 slot="header">Dream Runner</h1>
+              <div slot="content">Fight and explore through a 2D world cast upon a 3D cube-mapped surface.</div>
             </OTcard>
           </div>
         </div>
@@ -52,7 +52,7 @@
           <B9card v-bind:isBlurred="this.B9blur" v-bind:touchFunction="hover" v-bind:off="off"
             v-bind:clickFunction="openTodo">
             <h1 slot="header">Todo App</h1>
-            <div slot="content">Keep track of your daily tasks and monitor your progress.</div>
+            <div slot="content">Track your daily tasks.</div>
           </B9card>
         </div>
       </div>
@@ -182,6 +182,10 @@ export default {
     openTodo() {
       window.location.href = 'http://trevor.hanaroenterprise.com/todo';
     },
+
+    openCatinal() {
+      window.location.href = 'http://tina.hanaroenterprise.com'
+    }
   },
 };
 </script>
@@ -204,19 +208,19 @@ export default {
  text-align: left;
  font-weight: 100;
   font-family: "Playfair Display";
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .contactE { 
  text-align: left;
  font-weight: 100;
   font-family: "Playfair Display";
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .icon1,
 .icon2 {
-  height: 20px;
+  height: 14px;
   cursor: pointer;
 }
 
@@ -229,8 +233,8 @@ export default {
 }
 
 .mailWrapper {
-  height: 20px;
-  width: 20px;
+  height: 14px;
+  width: 14px;
 }
 
 .contactInfo {
@@ -242,7 +246,7 @@ export default {
   position: fixed;
   top: 35px;
   left: 25px;
-  width: 50px;
+  width: 30px;
   z-index: 10;
   cursor: pointer;
 }
@@ -251,7 +255,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15vh;
+  margin-top: 20vh;
 }
 
 .triContainer {

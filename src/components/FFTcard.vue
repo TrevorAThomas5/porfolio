@@ -108,8 +108,8 @@ export default {
 .card {
   position: relative;
   flex: 0 0 240px;
-  width: 240px;
-  height: 660px;
+  width: 144px;
+  height: 396px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -186,6 +186,7 @@ export default {
 
 .card-info p,
 .card-info div {
+  font-size: 10px;
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
   transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -197,7 +198,7 @@ export default {
 
 .card-info h1 {
   font-family: "Playfair Display";
-  font-size: 36px;
+  font-size: 21px;
   font-weight: 700;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
   margin: 0;
@@ -232,19 +233,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 20px;
   width: 60px;
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 10px;
 
   z-index: 5;
 }
 
 .android {
   margin-left: 5px;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
 }
 </style>
