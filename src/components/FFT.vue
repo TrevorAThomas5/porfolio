@@ -248,7 +248,7 @@ export default {
     justify-content: center;
 }
 
-.space {
+.spaceN {
     margin-bottom: -200px;
     display: flex;
     align-items: center;
@@ -298,19 +298,19 @@ export default {
     text-align: left;
     font-weight: 100;
     font-family: "Playfair Display";
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .contactE {
     text-align: left;
     font-weight: 100;
     font-family: "Playfair Display";
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .icon1,
 .icon2 {
-    height: 20px;
+    height: 14px;
     cursor: pointer;
 }
 
@@ -330,6 +330,8 @@ export default {
 .contactInfo {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: left;
 }
 
 .scrollContainer {
@@ -345,12 +347,12 @@ export default {
 
 .scrollText {
     line-height: 0;
-    font-size: 40px;
+    font-size: 20px;
     text-align: left;
 }
 
 .scrollImg {
-    width: 45px;
+    width: 25px;
 }
 
 .centerIt {

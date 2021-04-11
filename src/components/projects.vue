@@ -25,7 +25,7 @@
         </div>
         <div class="smallDoubleContainer">
           <div class="LG">
-            <LGcard v-bind:isBlurred="this.LGblur" v-bind:touchFunction="hover" v-bind:off="off">
+            <LGcard v-bind:clickFunction="openLG" v-bind:isBlurred="this.LGblur" v-bind:touchFunction="hover" v-bind:off="off">
               <h1 slot="header">Level Generator</h1>
               <div slot="content">Create randomized dungeon layouts to fight and explore through.</div>
             </LGcard>
@@ -185,6 +185,10 @@ export default {
 
     openCatinal() {
       window.location.href = 'http://tina.hanaroenterprise.com'
+    },
+
+    openLG() {
+      window.location.href = '/#/LG';
     }
   },
 };

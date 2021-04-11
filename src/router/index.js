@@ -4,6 +4,8 @@ import home from "../components/home";
 import about from "../components/projects";
 import FFT from "../components/FFT";
 import GH from "../components/GH";
+import LG from "../components/LG";
+
 
 Vue.use(Router);
 
@@ -29,5 +31,10 @@ export default new Router({
         name: "GH",
         component: GH,
     },
+    {
+      path: "/LG",
+      name: "LG",
+      component: LG,
+  },
   ],
 });

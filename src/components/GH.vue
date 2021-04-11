@@ -95,7 +95,7 @@
             </div>
 
 
-        <div class='spaceN'>
+        <div class='spaceN1'>
             <cardXvid
                     class="fade-in"
                     v-bind:width="440"
@@ -211,7 +211,7 @@ export default {
     width: 100vw;
 }
 
-.spaceN {
+.spaceN1 {
     margin-bottom: -100px;
     display: flex;
     align-items: center;
@@ -293,8 +293,8 @@ export default {
 .contactInfo1 {
     text-align: right;
     display: flex;
-    align-items: flex-end;
-    justify-content: right;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
 }
 
