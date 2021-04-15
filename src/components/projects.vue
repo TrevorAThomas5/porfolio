@@ -31,9 +31,9 @@
             </LGcard>
           </div>
           <div class="OT">
-            <OTcard v-bind:isBlurred="this.OTblur" v-bind:touchFunction="hover" v-bind:off="off">
-              <h1 slot="header">Dream Runner</h1>
-              <div slot="content">Fight and explore through a 2D world cast upon a 3D cube-mapped surface.</div>
+            <OTcard v-bind:clickFunction='openAnn' v-bind:isBlurred="this.OTblur" v-bind:touchFunction="hover" v-bind:off="off">
+              <h1 slot="header">Anniversary Website</h1>
+              <div slot="content">See my html/css design skills put to task in this website I built for my girlfriend.</div>
             </OTcard>
           </div>
         </div>
@@ -189,7 +189,11 @@ export default {
 
     openLG() {
       window.location.href = '/#/LG';
-    }
+    },
+
+    openAnn() {
+        window.location.href = 'http://trevor.hanaroenterprise.com/anniversary/';
+    },
   },
 };
 </script>

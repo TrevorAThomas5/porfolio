@@ -8,8 +8,8 @@
   >
     <div class="card" :style="[cardStyle, blurred]" v-on:click="this.handlePress">
       <div class="unityWrapper">
-        <img class="unity" src="opengl.svg" />
-        <img class="unity" src="/c-logo.svg" />
+        <img class="unity" src="/js-brands.svg" />
+        <img class="unity" src="/html.svg" />
       </div>
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
       <div class="card-info">
@@ -75,7 +75,7 @@ export default {
     },
     cardBgImage() {
       return {
-        backgroundImage: `url('/mash.png')`,
+        backgroundImage: `url('/ann.png')`,
       };
     },
   },
@@ -171,7 +171,7 @@ export default {
   padding-top: 0px;
   padding-bottom: 20px;
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 15px;
   position: absolute;
   bottom: 0;
   color: #fff;
