@@ -33,7 +33,7 @@ export default {
   data: () => {
     return {
       width: 144,
-      height: 288,
+      height: 134,
       mouseX: 0,
       mouseY: 0,
       mouseLeaveDelay: null,
@@ -109,7 +109,7 @@ export default {
   position: relative;
   flex: 0 0 240px;
   width: 144px;
-  height: 288px;
+  height: 134px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;

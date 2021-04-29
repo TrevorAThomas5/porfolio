@@ -9,7 +9,8 @@
     <div class="card" :style="[cardStyle, blurred]" v-on:click="this.handlePress">
       <div class="unityWrapper">
         <img class="unity" src="/js-brands.svg" />
-        <img class="unity" src="/react-brands.svg" />
+        <img class="unity" src="/vuejs-brands.svg" />
+        <img class="unity" src="/php-brands.svg" />
       </div>
       <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
       <div class="card-info">
@@ -33,7 +34,7 @@ export default {
   data: () => {
     return {
       width: 144,
-      height: 96,
+      height: 250,
       mouseX: 0,
       mouseY: 0,
       mouseLeaveDelay: null,
@@ -75,7 +76,7 @@ export default {
     },
     cardBgImage() {
       return {
-        backgroundImage: `url('/todoPic.png')`,
+        backgroundImage: `url('/taskman.png')`,
       };
     },
   },
@@ -109,7 +110,7 @@ export default {
   position: relative;
   flex: 0 0 240px;
   width: 144px;
-  height: 96px;
+  height: 250px;
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
@@ -227,7 +228,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 20px;
-  width: 40px;
+  width: 60px;
   position: absolute;
   top: 10px;
   right: 15px;

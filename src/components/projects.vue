@@ -51,8 +51,8 @@
         <div class="B9">
           <B9card v-bind:isBlurred="this.B9blur" v-bind:touchFunction="hover" v-bind:off="off"
             v-bind:clickFunction="openTodo">
-            <h1 slot="header">Todo App</h1>
-            <div slot="content">Track your daily tasks.</div>
+            <h1 slot="header">TaskMan</h1>
+            <div slot="content">Track your tasks and log your daily activities. Built for IT Action Inc.</div>
           </B9card>
         </div>
       </div>
@@ -180,7 +180,7 @@ export default {
     },
 
     openTodo() {
-      window.location.href = 'http://trevor.hanaroenterprise.com/todo';
+      window.location.href = 'http://taskman.hanaroenterprise.com';
     },
 
     openCatinal() {
